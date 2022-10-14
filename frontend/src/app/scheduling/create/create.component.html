@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col">    
+        <h1>Novo agendamento</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <form name="createScheduling" (ngSubmit)="createScheduling()">
+            <div class="mb-3">
+                <label for="value" class="form-label">Conta de origem</label>
+                <input type="text" class="form-control" name="originAccount" [(ngModel)]="originAccount" />
+            </div>            
+            <div class="mb-3">
+                <label for="value" class="form-label">Conta de destino</label>
+                <input type="text" class="form-control" name="destinationAccount" [(ngModel)]="destinationAccount" />
+            </div>            
+            <div class="mb-3">
+                <label for="value" class="form-label">Data da transferência</label>
+                <input type="date" class="form-control" name="scheduleDate" [(ngModel)]="scheduleDate" />
+            </div>
+            <div class="mb-3">
+                <label for="destiny" class="form-label">Valor da transferência</label>
+                <input type="number" class="form-control" name="transferValue" [(ngModel)]="transferValue" >
+            </div>
+            <div class="mb-3">
+                <label for="destiny" class="form-label">Tipo de taxa</label>
+                <input type="text" class="form-control" name="transactionType" [(ngModel)]="transactionType" >
+            </div>        
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" type="submit">Agendar</button>
+                        <a class="btn btn-primary m-1" type="button" routerLink="/list">Voltar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

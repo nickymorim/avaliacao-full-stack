@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col">
+        <h1>Agendamentos</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" type="button" routerLink="/create">Criar agendamento</a>
+    </div>
+</div>
+<div class="row">
+	<div class="col">
+		<table class="table">
+			<thead>
+				<tr>
+					<td>Origem</td>
+					<td>Destino</td>
+                    <td>Valor</td>
+                    <td>Taxa</td>
+                    <td>Data de agendamento</td>
+                    <td>Data da transferência</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let schedule of scheduleList">
+					<td>{{ schedule.originAccount }}</td>
+					<td>{{ transfer.destinationAccount }}</td>
+                    <td>{{ transfer.scheduleDate }}</td>
+                    <td>{{ transfer.transferValue }}</td>
+                    <td>{{ transfer.transactionType }}</td>
+                    <td>{{ transfer.destinationAccount }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
