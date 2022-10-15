@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SchedulingService } from '../scheduling.service';
 import { Scheduling } from 'src/app/models/scheduling.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -16,7 +17,8 @@ export class CreateComponent implements OnInit {
   transactionType = "";
 
   constructor(
-    private schedulingService: SchedulingService
+    private schedulingService: SchedulingService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,9 +29,14 @@ export class CreateComponent implements OnInit {
     scheduling.originAccount = this.originAccount;
     scheduling.destinationAccount = this.destinationAccount;
     scheduling.scheduleDate = this.scheduleDate;
-    scheduling.transferValue = this.transferValue;
+    scheduling.value = this.transferValue;
     scheduling.transactionType = this.transactionType;
 
-    this.schedulingService.create(scheduling);
+    this.schedulingService.create(scheduling).subscribe((scheduling) => {
+      console.log(scheduling);
+      this.router.navigate(['list']);
+    }, (error) => {
+      alert('Erro ao criar agendamento');
+    });
   }
 }

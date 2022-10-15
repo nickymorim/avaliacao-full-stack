@@ -1,62 +1,32 @@
-# Entregáveis
- Pequena documentação no README explicando suas decisões arquiteturais, versões de linguagem,
-ferramentas utilizadas e instruções para a subida do projeto.
+# Avaliacao Fullstack
+## Tecnologias utilizadas
+- Backend: Java 17 com o framework SpringBoot 
+- Frontend: Angular 14
 
- É obrigatório a criação de um projeto no seu Github para que vejamos os passos feitos
-através dos commits.
+Spring Boot é um dos frameworks mais conhecidos e utilizados para o desenvolvimento de APIs REST com Java. Está há muitos anos no mercado e possui farta comunidade, por isso a escolha para o desenvolvimento do backend.
 
-# Avaliação
+O Angular, assim como o Spring, é um dos frameworks mais conhecido e utilizado para desenvolvimento de SPA. Foi utilizada a sua versão mais recente.
 
-Desenvolver tanto a API quanto o front-end (Spring boot e Vue no front, caso não tenha conhecimentos de vue, aceitamos o front com angular)
+## Como executar o projeto
 
-O objetivo dessa tarefa é avaliar como você vai desenvolver o código em termos de estilo,
-eficiência, qualidade e prazo de entrega.
+No diretório do backend, com Java (17+) e Maven (3.8.2) instalados, executar os seguintes comandos:
 
-A tarefa é a seguinte:
+```mvn clean install``` 
 
-Desenvolver um sistema de agendamento de transferências financeiras.
+```mvn spring-boot:run```
 
-1) O usuário deve poder agendar uma transferência financeira com as seguintes
- informações:
- Conta de origem (padrão XXXXXX)
- Conta de destino (padrão XXXXXX)
- Valor da transferência
- Taxa (a ser calculada)
- Data da transferência (data que será realizada a transferência)
- Data de agendamento (hoje)
- 
-2) Cada tipo de transação segue uma regra diferente para cálculo da taxa
+A API estará disponível no endereço localhost:8080 e pode ser verificada no endereço
 
- A: Tranferências no mesmo dia do agendamento tem uma taxa de $3 mais 3% do valor a
-ser transferido;
+```http://localhost:8080/actuator/health```
 
-B: Tranferências até 10 dias da data de agendamento possuem uma taxa de $12.
+Tambem está disponível um Swagger para testes diretos na API
 
-C: Operações do tipo C tem uma taxa regressiva conforme a data de
-transferência:
+```http://localhost:8080/swagger-ui.html```
 
- acima de 10 dias da data de agendamento 8.2%
- 
- acima de 20 dias da data de agendamento 6.9%
- 
- acima de 30 dias da data de agendamento 4.7%
- 
- acima de 40 dias da data de agendamento 1.7%
- 
- D: Operações do tipo D tem a taxa igual a A, B ou C dependendo do valor da
-transferência.
+Já para executar o projeto do frontend, será necessaria a instalação do Node (16.18) e do Angular CLI.
 
- Valores até $1.000 seguem a taxação tipo A
- 
- Valores de $1.001 até $2.000 seguem a taxação tipo B
- 
- Valores maiores que $2.000 seguem a taxação tipo C
- 
-Obs: Caso não haja taxa aplicável, lançar um alerta sobre o erro.
+```npm install```
 
-3) O usuário deve poder ver todos os agendamentos cadastrados.
+```ng serve -o```
 
-Nota: A persistência deve ser feita em banco de dados em memória (h2, por exemplo).
-Boa sorte!
-
-
+A aplicação estará disponivel em ```http://localhost:4200```

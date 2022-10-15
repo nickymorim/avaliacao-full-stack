@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+      driverClassName: org.h2.Driver
+      url: jdbc:h2:mem:scheduling
+      username: ${DATASOURCE_USERNAME}
+      password: ${DATASOURCE_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: /h2-console

@@ -20,13 +20,11 @@ export class SchedulingService {
 
   create(scheduling: Scheduling) {
     console.log("Criando agendamento");
-    return this.httpClient.post(`${API}/`, {
-      scheduling
-    });
+    return this.httpClient.post(`${API}/bank/scheduling/`, scheduling);
   }
 
   list() {
     console.log("Listando agendamentos");
-    return this.httpClient.get<Scheduling[]>(`${API}/`);
+    return this.httpClient.get<Scheduling[]>(`${API}/bank/scheduling/`);
   }
 }

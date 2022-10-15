@@ -24,11 +24,11 @@
 			<tbody>
 				<tr *ngFor="let schedule of scheduleList">
 					<td>{{ schedule.originAccount }}</td>
-					<td>{{ transfer.destinationAccount }}</td>
-                    <td>{{ transfer.scheduleDate }}</td>
-                    <td>{{ transfer.transferValue }}</td>
-                    <td>{{ transfer.transactionType }}</td>
-                    <td>{{ transfer.destinationAccount }}</td>
+					<td>{{ schedule.destinationAccount }}</td>
+                    <td>{{ schedule.value }}</td>
+                    <td>{{ schedule.tax }}</td>
+                    <td>{{ schedule.scheduleDate }}</td>
+                    <td>{{ schedule.transferDate }}</td>
 				</tr>
 			</tbody>
 		</table>

@@ -1,7 +1,9 @@
 export interface Scheduling {
     originAccount: string;
     destinationAccount: string;
+    transferDate: string;
     scheduleDate: string;
-    transferValue: number;
+    value: number;
+    tax: number;
     transactionType: string;
 }
