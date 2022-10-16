@@ -86,6 +86,8 @@ class SchedulingServiceImplTests {
                 LocalDate.now(),
                 BigDecimal.valueOf(150),
                 "A");
+
+        return request;
     }
 
     private Tax buildTax() {
@@ -116,5 +118,7 @@ class SchedulingServiceImplTests {
                 BigDecimal.valueOf(0),
                 "A"
         );
+
+        return request;
     }
 }
